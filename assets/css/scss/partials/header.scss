@@ -1,0 +1,653 @@
+@import '../inc/vars';
+
+#preloader {
+        z-index: 101;
+        transition: 0.5s ease-in-out;
+        &.hide {
+                z-index: -1;
+                opacity: 0;
+        }
+}
+
+body {
+        &.fixed {
+                overflow: hidden;
+        }
+
+        &.is-active {
+                background: rgba(0, 0, 0, 0.6);
+                transition: 0.3s ease-in-out;
+        }
+}
+
+.top-bar {
+        padding: clamp(rem(16), vw(8), rem(8)) 0;
+        background-color: $blue;
+        &.dark-bright {
+                background-color: #1993b4;
+        }
+        .container {
+                max-width: rem(1140);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+        }
+
+        &__left {
+                ul {
+                        display: flex;
+                        align-items: center;
+                        gap: 0 rem(15);
+
+                        @include tablet-smm {
+                                gap: 0 rem(5);
+                        }
+
+                        li {
+                                i {
+                                        color: #fff;
+                                        font-size: rem(12);
+                                }
+
+                                a {
+                                        color: #fff;
+                                        font-size: rem(12);
+                                        display: flex;
+                                        align-items: center;
+                                        i {
+                                                margin-right: rem(5);
+                                        }
+
+                                        @include tablet-smm {
+                                                font-size: rem(0);
+                                                i {
+                                                        font-size: rem(14);
+                                                }
+                                        }
+                                }
+                        }
+                }
+        }
+
+        &__right {
+                ul {
+                        display: flex;
+                        gap: rem(15);
+
+                        li {
+                                position: relative;
+
+                                a {
+                                        color: #fff;
+                                }
+                        }
+                }
+        }
+}
+
+.header {
+        z-index: 3;
+        left: 0;
+        width: 100%;
+        top: 0;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+
+        &.sticky {
+                position: sticky;
+                top: 0;
+                background-color: #fff;
+        }
+
+        &__top {
+                padding: rem(10) rem(15);
+                width: 100%;
+                max-width: rem(1140);
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &-info {
+                        display: flex;
+                        align-items: center;
+                        gap: rem(18);
+
+                        a {
+                                display: flex;
+                                align-items: center;
+                                font-family: $barlow;
+                                font-weight: 500;
+                                color: $blue;
+                                font-size: rem(14);
+                                text-transform: uppercase;
+                                margin-left: rem(5);
+
+                                svg {
+                                        margin-left: rem(4);
+
+                                        @include mobile-sm {
+                                                display: none;
+                                        }
+                                }
+                                @include tablet-sm {
+                                }
+                                @include tablet-sm {
+                                        font-size: clamp(
+                                                rem(12),
+                                                vw(14),
+                                                rem(14)
+                                        );
+                                        text-align: center;
+                                }
+                        }
+
+                        img {
+                                @include tablet-sm {
+                                        max-width: rem(120);
+                                }
+
+                                @include tablet-smm {
+                                        display: none;
+                                }
+                        }
+                }
+        }
+
+        &__bottom {
+                background-color: $blue;
+                width: 100%;
+        }
+
+        &.dark-bright {
+                .header__bottom {
+                        background-color: #1993b4;
+                }
+        }
+
+        .wrapper {
+                align-items: center;
+                display: flex;
+                align-items: center;
+
+                flex-direction: column;
+        }
+
+        .logo {
+                display: block;
+                max-width: rem(240);
+                position: relative;
+                z-index: 1;
+                margin-right: auto;
+
+                img {
+                        display: block;
+                }
+
+                @include tablet-sm {
+                        max-width: rem(120);
+                }
+
+                @include mobile-sm {
+                        max-width: rem(70);
+                }
+        }
+
+        nav {
+                max-width: rem(1140);
+                margin: 0 auto;
+                ul {
+                        list-style: none;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        // gap: clamp(rem(20), vw(30), rem(30));
+
+                        > li {
+                                &::after {
+                                        content: '';
+                                        left: 0;
+                                        position: absolute;
+                                        top: 0;
+                                        width: 100%;
+                                        z-index: 0;
+                                        background-color: #fff;
+                                        height: 0;
+                                        transition: all 0.4s ease-in-out;
+
+                                        @include tablet-sm {
+                                                display: none;
+                                        }
+                                }
+
+                                &:hover {
+                                        &::after {
+                                                height: 100%;
+                                        }
+
+                                        a {
+                                                opacity: 0.7;
+                                                color: $green;
+                                        }
+                                }
+                        }
+
+                        li {
+                                display: inline-block;
+                                position: relative;
+                                line-height: 1em;
+                                padding: rem(10) rem(20);
+
+                                a {
+                                        display: block;
+                                        color: #fff;
+                                        font-size: rem(14);
+                                        font-weight: 600;
+                                        position: relative;
+                                        transition: all 0.2s ease-in-out;
+                                        white-space: nowrap;
+                                        font-family: $barlow;
+                                        z-index: 2;
+
+                                        &:hover {
+                                                color: $green;
+                                        }
+                                }
+
+                                .drop-down {
+                                        top: 20px;
+                                        font-family: 'ETmodules', sans-serif;
+                                        content: '3';
+                                        font-size: rem(20);
+                                        position: absolute;
+                                        right: 0;
+                                        font-weight: 800;
+                                        transition: all 0.2s ease-in-out;
+                                }
+
+                                &:hover .drop-down {
+                                        color: $blue;
+                                }
+
+                                &.current_page_parent {
+                                        .current-ref {
+                                                color: rgb(255, 225, 0);
+                                        }
+                                }
+
+                                &.current-menu-item {
+                                        .current-ref {
+                                                color: rgb(255, 225, 0);
+                                        }
+                                }
+
+                                &.menu-item-has-children {
+                                        > .icon {
+                                                z-index: 2;
+                                                display: none;
+                                                font-family: $fontIcons;
+                                                font-size: rem(16);
+                                                position: absolute;
+                                                right: rem(5);
+                                                top: 50%;
+                                                transform: translateY(-50%);
+                                                font-weight: 800;
+                                                width: rem(24);
+                                                height: rem(24);
+                                                font-style: normal;
+
+                                                @include tablet-sm {
+                                                        display: block;
+                                                }
+                                        }
+                                }
+
+                                // Sub menu
+                                ul {
+                                        flex-direction: column;
+                                        gap: 0;
+                                        align-items: flex-start;
+                                        position: absolute;
+                                        padding: 0;
+                                        z-index: 10;
+                                        width: 240px;
+                                        background: #fff;
+                                        visibility: hidden;
+                                        opacity: 0;
+                                        background: #fff none repeat scroll 0 0;
+                                        border: rem(1) solid transparent;
+                                        border-radius: rem(2);
+                                        box-shadow: 0 rem(5) rem(50) 0
+                                                rgba(0, 0, 0, 0.15);
+                                        padding: 0;
+                                        top: 100%;
+                                        left: 0;
+
+                                        li {
+                                                display: block;
+                                                color: #333333;
+                                                display: block;
+                                                margin-bottom: 0;
+                                                padding: rem(5) rem(10);
+                                                text-align: left;
+                                                text-transform: capitalize;
+                                                width: 100%;
+
+                                                &::after {
+                                                        display: none;
+                                                }
+
+                                                &:not(:last-child) {
+                                                        border-bottom: 1px solid
+                                                                rgba(
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0.15
+                                                                );
+                                                }
+
+                                                &::before {
+                                                        top: 0;
+                                                        content: '';
+                                                        position: absolute;
+                                                        left: 0;
+                                                        width: rem(3);
+                                                        background-color: #fff;
+                                                        height: 100%;
+                                                        transition: 0.3s
+                                                                ease-in-out;
+                                                }
+
+                                                a {
+                                                        font-weight: 400;
+                                                        padding: 0;
+                                                        text-transform: capitalize;
+                                                        font-family: $bodyFont;
+                                                        font-size: rem(13);
+                                                        color: #333;
+                                                        line-height: 1.4;
+                                                        border-left: rem(2)
+                                                                solid #fff;
+                                                }
+
+                                                &:hover {
+                                                        background-color: #f8f9fa !important;
+
+                                                        &::before {
+                                                                background-color: $green;
+                                                                top: 0;
+                                                                z-index: 1;
+                                                        }
+                                                }
+                                        }
+
+                                        .menu-item-has-children {
+                                                position: relative;
+                                                // Sub menu
+                                                ul {
+                                                        display: none;
+                                                }
+
+                                                &:hover {
+                                                        > ul {
+                                                                display: block;
+                                                                top: 0;
+                                                                right: 0;
+                                                                bottom: auto;
+                                                                transform: translateX(
+                                                                        100%
+                                                                );
+                                                                position: absolute;
+                                                                width: 100%;
+                                                                padding-top: 0;
+                                                                padding-bottom: 0;
+                                                                @include tablet-md {
+                                                                        transform: none;
+                                                                        position: initial;
+                                                                        border: none;
+                                                                        display: none;
+                                                                }
+                                                        }
+                                                }
+
+                                                .icon {
+                                                        transform: translateY(
+                                                                        -50%
+                                                                )
+                                                                rotate(-90deg);
+                                                }
+                                        }
+
+                                        @include tablet-md {
+                                                position: initial;
+                                        }
+                                }
+
+                                &:hover {
+                                        ul {
+                                                opacity: 1;
+                                                visibility: visible;
+                                        }
+                                }
+                        }
+                }
+        }
+
+        .menu-toggle {
+                visibility: visible;
+                opacity: 1;
+                position: relative;
+                width: rem(30);
+                height: rem(20);
+                cursor: pointer;
+                display: none;
+                margin-left: auto;
+                z-index: 99;
+                cursor: pointer;
+
+                &.is-active {
+                        visibility: hidden;
+                        opacity: 0;
+                        small {
+                                background-color: #fff;
+                                transform: scale(0);
+                        }
+
+                        &::before {
+                                background-color: #fff;
+                                transform: rotate(45deg);
+                                top: rem(9);
+                        }
+
+                        &::after {
+                                background-color: #fff;
+                                transform: rotate(-45deg);
+                                bottom: rem(9);
+                        }
+                }
+
+                small {
+                        position: absolute;
+                        background-color: #333333;
+                        left: 0;
+                        top: rem(9);
+                        width: 100%;
+                        height: 2px;
+                        transition: all 0.1s;
+                }
+
+                &::before,
+                &::after {
+                        content: '';
+                        background-color: #333333;
+                        position: absolute;
+                        width: 100%;
+                        height: rem(2);
+                        left: 0;
+                        transition: all 0.3s;
+                }
+
+                &::before {
+                        top: 0;
+                }
+
+                &::after {
+                        bottom: 0;
+                }
+        }
+
+        @include tablet-md {
+                nav {
+                        display: block;
+                        position: fixed;
+                        background-color: white;
+                        left: -100%;
+                        top: 0;
+                        width: 100%;
+                        max-width: rem(320);
+                        height: 100%;
+                        z-index: 100;
+                        padding-top: rem(40);
+                        padding-left: rem(20);
+                        padding-right: rem(20);
+                        overflow: auto;
+                        transition: 0.3s ease-in-out;
+
+                        ul {
+                                flex-direction: column;
+                                li {
+                                        display: block;
+                                        font-size: 1.2rem;
+                                        width: 100%;
+                                        padding: 0.625rem 0;
+
+                                        a {
+                                                color: $blue;
+                                        }
+
+                                        &:not(:last-child) {
+                                                margin-right: 0;
+                                                border-bottom: solid rem(1) grey;
+                                        }
+
+                                        &.menu-item-has-children {
+                                                .icon {
+                                                        transform: none;
+                                                        top: rem(14);
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        font-size: rem(24);
+                                                        transition: 0.2s;
+                                                        color: #333333;
+                                                        cursor: pointer;
+                                                }
+
+                                                > ul {
+                                                        border: none;
+                                                }
+
+                                                &:hover {
+                                                        > ul {
+                                                                transform: none;
+                                                                position: initial;
+                                                                border: none;
+                                                        }
+                                                }
+
+                                                ul {
+                                                        .menu-item-has-children {
+                                                                .icon {
+                                                                        top: rem(
+                                                                                20
+                                                                        );
+                                                                }
+                                                        }
+                                                }
+                                        }
+
+                                        ul {
+                                                width: 100%;
+                                                position: static;
+                                                opacity: 1;
+                                                visibility: visible;
+                                                display: none;
+                                                box-shadow: none;
+
+                                                li {
+                                                        padding: 0.6375rem
+                                                                0.625rem;
+                                                        a {
+                                                                padding-top: 0;
+                                                                padding-bottom: 0;
+                                                        }
+                                                }
+                                        }
+
+                                        &.is-active {
+                                                .rotate {
+                                                        transform: rotateX(
+                                                                180deg
+                                                        );
+                                                        color: #333333;
+                                                }
+
+                                                ul {
+                                                        display: none;
+                                                }
+
+                                                .toggled {
+                                                        display: block;
+
+                                                        .is-active {
+                                                                .toggled {
+                                                                        display: block;
+                                                                }
+
+                                                                .is-active {
+                                                                        .toggled {
+                                                                                display: block;
+                                                                        }
+                                                                }
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+
+                        &.is-active {
+                                display: block;
+                                left: 0;
+
+                                .close {
+                                        position: absolute;
+                                        width: rem(25);
+                                        height: rem(25);
+                                        right: rem(15);
+                                        top: rem(15);
+                                        &::after,
+                                        &::before {
+                                                content: '';
+                                                position: absolute;
+                                                width: rem(25);
+                                                height: rem(2);
+                                                background-color: $blue;
+                                        }
+                                        &:after {
+                                                transform: rotate(45deg);
+                                        }
+
+                                        &::before {
+                                                transform: rotate(-45deg);
+                                        }
+                                }
+                        }
+                }
+
+                .menu-toggle {
+                        display: block;
+                        margin-left: rem(10);
+                }
+        }
+}

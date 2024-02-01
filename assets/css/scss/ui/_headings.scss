@@ -1,0 +1,26 @@
+.subtitle {
+  font-size: rem(12);
+  color: #135464;
+  text-transform: uppercase;
+  letter-spacing: rem(2);
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  &::before {
+    content: "";
+    height: 3px;
+    width: 80px;
+    display: block;
+    background-color: #135464;
+    margin-right: 10px;
+  }
+}
+
+.title {
+  font-size: clamp(rem(26), vw(40), rem(40));
+  font-weight: 700;
+  line-height: 1.2;
+  color: #212121;
+  margin-bottom: clamp(rem(18), vw(24), rem(24));
+  font-family: $barlow;
+}

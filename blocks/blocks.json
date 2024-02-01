@@ -1,0 +1,3 @@
+{
+  "blocks": [{ "name": "hero-block" }, { "name": "text-block" }, { "name": "about-block" }, { "name": "services-block" }, { "name": "signboard-block" }, { "name": "condition-block" }, { "name": "testimonials-block" }, { "name": "popup-block" }]
+}

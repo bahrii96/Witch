@@ -1,0 +1,67 @@
+@use 'inc' as *;
+
+html {
+        font-size: $bodyfontsize;
+        scroll-behavior: smooth;
+}
+
+body {
+        color: #4d4d4d;
+        font-size: $bodyfontsize;
+        font-family: $bodyFont;
+        font-weight: 400;
+
+        &.page-template-default-page {
+                .entry-header {
+                        margin: 0;
+                }
+        }
+
+        &.hide-footer-contact-block {
+                .contact-footer {
+                        display: none;
+                }
+        }
+}
+
+@import '_layout';
+@import 'ui/_button';
+@import 'ui/_headings';
+@import 'ui/_article';
+@import 'ui/_aspect-ratio';
+/* Default Page */
+@import 'inc/_default-content';
+/* Form checkboxes  */
+// @import "inc/_checkboxes";
+// HEADER & FOOTER
+@import 'partials/header';
+@import 'partials/footer';
+
+.container-home {
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr;
+    gap: rem(20);
+@include tablet-sm {
+grid-template-columns: 1fr;
+}
+    .main-content,
+    .sidebar {
+            padding: rem(30) rem(15);
+    }
+    &.right {
+            grid-template-columns: 1.4fr 0.6fr;
+            .sidebar {
+                    order: 2;
+            }
+            .main-content {
+                    order: 1;
+            }
+    }
+    
+    &.remove {
+            grid-template-columns: 1fr;
+            .sidebar {
+                    display: none;
+            }
+    }
+}
