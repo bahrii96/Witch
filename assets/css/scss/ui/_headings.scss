@@ -10,7 +10,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: rem(5);
     @include desktop-mdl {
-        font-size: rem(162);
+        font-size: rem(156);
         letter-spacing: rem(0);
     }
     @include desktop-md {

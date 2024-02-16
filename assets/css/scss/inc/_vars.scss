@@ -25,7 +25,7 @@ $padding-middle: 24px;
 // <Mixins-media-queries>=========================================================================================================
 
 @mixin desktop-mdl {
-    @media (max-width: 1600px) {
+    @media (max-width: 1650px) {
         @content;
     }
 }

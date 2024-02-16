@@ -8,7 +8,7 @@
     padding: clamp(rem(82), vw(200), rem(200)) 0 clamp(rem(82), vw(135), rem(135));
 
     h1 {
-        @include tablet-sm {
+        @include desktop-mdl {
             text-align: center;
         }
     }
