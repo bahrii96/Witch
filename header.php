@@ -62,11 +62,11 @@
 			</div>
 			<nav class="nav-mob">
 				<?php
-				wp_nav_menu(array(
-					'theme_location' => 'primary_left',
-					'menu_class' => 'main-nav',
-					'walker' => new Custom_Walker_Nav_Menu
-				));
+				// wp_nav_menu(array(
+				// 	'theme_location' => 'primary_left',
+				// 	'menu_class' => 'main-nav',
+				// 	'walker' => new Custom_Walker_Nav_Menu
+				// ));
 				?>
 
 				<?php
