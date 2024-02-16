@@ -1,26 +1,46 @@
-.subtitle {
-  font-size: rem(12);
-  color: #135464;
-  text-transform: uppercase;
-  letter-spacing: rem(2);
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  &::before {
-    content: "";
-    height: 3px;
-    width: 80px;
-    display: block;
-    background-color: #135464;
-    margin-right: 10px;
-  }
+h1 {
+    background: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Mak';
+    font-size: rem(175);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: rem(5);
+    @include desktop-mdl {
+        font-size: rem(162);
+        letter-spacing: rem(0);
+    }
+    @include desktop-md {
+        font-size: clamp(rem(56), vw(155), rem(155));
+    }
 }
 
-.title {
-  font-size: clamp(rem(26), vw(40), rem(40));
-  font-weight: 700;
-  line-height: 1.2;
-  color: #212121;
-  margin-bottom: clamp(rem(18), vw(24), rem(24));
-  font-family: $barlow;
+h2 {
+    background: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-family: Mak;
+    font-size: clamp(rem(32), vw(48), rem(48));
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: clamp(rem(6), vw(24), rem(24));
+}
+.description {
+    background: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-family: Fixel Display;
+    font-size: clamp(rem(12), vw(18), rem(18));
+    font-weight: 300;
+    line-height: 1.3;
 }

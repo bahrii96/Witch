@@ -16,7 +16,7 @@ if (!function_exists('initLinkHref')) {
 if (!function_exists('initGravityForm')) {
 	function initGravityForm($form_id)
 	{
-		echo do_shortcode('[gravityform id="' . $form_id . '" title="true"]');
+		echo do_shortcode('[contact-form-7 id="' . $form_id . '" title="Contact form 1"]');
 	}
 }
 

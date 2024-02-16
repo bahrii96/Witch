@@ -1,0 +1,517 @@
+@import '../inc/vars';
+
+.home-page {
+    overflow: hidden;
+}
+.hero-block {
+    position: relative;
+    padding: clamp(rem(82), vw(200), rem(200)) 0 clamp(rem(82), vw(135), rem(135));
+
+    h1 {
+        @include tablet-sm {
+            text-align: center;
+        }
+    }
+    &__overlay {
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__subtitle {
+        /* H3 */
+        background: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-family: 'Fixel Display';
+        font-size: clamp(rem(16), vw(40), rem(40));
+        font-weight: 300;
+        line-height: 1.35;
+        margin-left: clamp(rem(40), vw(140), rem(140));
+        margin-bottom: clamp(rem(23), vw(75), rem(75));
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        @include tablet-sm {
+            flex-direction: column-reverse;
+        }
+    }
+    &__btn {
+        margin-top: rem(40);
+        margin-left: clamp(rem(14), vw(422), rem(422));
+        @include tablet-sm {
+            margin-left: rem(14);
+            margin-top: rem(2);
+        }
+    }
+    &__caption {
+        margin-top: rem(84);
+        max-width: clamp(rem(150), vw(405), rem(405));
+        width: 100%;
+        margin-right: clamp(rem(10), vw(142), rem(142));
+        display: flex;
+        flex-direction: column;
+        gap: rem(32);
+        @include tablet-sm {
+            margin-top: rem(22);
+            max-width: rem(150);
+            margin-right: rem(10);
+            margin-left: auto;
+            gap: rem(4);
+        }
+        span {
+            background: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-family: 'Fixel Display';
+            font-size: clamp(rem(16), vw(40), rem(40));
+            font-weight: 300;
+            line-height: 1.35;
+            letter-spacing: 0%;
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.about-block {
+    background: rgb(31, 2, 34);
+    position: relative;
+    &::after {
+        position: absolute;
+        content: '';
+        background-image: url('./../../images/smoke-1.png');
+        background-size: cover;
+        width: 955px;
+        height: 915px;
+        right: 0;
+        top: rem(-150);
+        @include tablet-sm {
+            width: rem(280);
+            height: rem(260);
+        }
+    }
+    .container {
+        display: flex;
+        gap: rem(112);
+        @include tablet-sm {
+            flex-direction: column;
+            gap: rem(16);
+        }
+    }
+
+    &__img {
+        margin-left: rem(-120);
+        margin-top: rem(-20);
+        @include desktop-md {
+            margin-left: rem(0);
+        }
+        @include tablet-sm {
+            margin: auto;
+            text-align: center;
+        }
+        img {
+            @include tablet-sm {
+                max-width: rem(170);
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__group {
+        max-width: rem(780);
+        width: 100%;
+        margin-top: rem(84);
+        @include tablet-sm {
+            margin-top: rem(16);
+        }
+    }
+}
+
+.runes-block {
+    background: rgb(31, 2, 34);
+    padding: clamp(rem(48), vw(218), rem(218)) 0 clamp(rem(24), vw(250), rem(250));
+    .container {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(rem(4), vw(142), rem(142));
+        @include tablet-sm {
+            grid-template-columns: 1fr;
+            gap: rem(4);
+        }
+    }
+    &__description {
+        li {
+            margin-left: rem(25);
+            &::marker {
+                color: #ebe6a9;
+            }
+        }
+        ul {
+            margin-bottom: rem(12);
+        }
+        p {
+            margin-bottom: rem(12);
+        }
+    }
+    &__img-logo {
+        @include tablet-sm {
+            margin-right: rem(20);
+        }
+        @include mobile-sm {
+            margin-right: rem(12);
+        }
+        img {
+            margin-left: auto;
+            max-width: rem(315);
+            width: 100%;
+            object-fit: cover;
+            @include tablet-sm {
+                max-width: rem(200);
+            }
+            @include mobile-sm {
+                max-width: rem(118);
+            }
+        }
+    }
+    &__img {
+        margin-top: rem(-120);
+
+        @include desktop-md {
+            margin-top: rem(0);
+        }
+        @include tablet-sm {
+            margin-top: rem(-50);
+            margin-left: rem(20);
+        }
+        @include mobile-sm {
+            margin-left: rem(12);
+        }
+        img {
+            max-width: rem(400);
+            width: 100%;
+            object-fit: cover;
+
+            @include tablet-sm {
+                max-width: rem(300);
+            }
+            @include mobile-sm {
+                max-width: rem(148);
+            }
+        }
+    }
+}
+
+.services-block {
+    position: relative;
+    padding: clamp(rem(45), vw(143), rem(143)) 0 clamp(rem(45), vw(135), rem(135));
+    &::after {
+        position: absolute;
+        content: '';
+        background-image: url('./../../images/smoke-2.png');
+        background-size: cover;
+        width: rem(955);
+        height: rem(955);
+        right: 20%;
+        top: rem(-400);
+        @include tablet-sm {
+            width: rem(280);
+            height: rem(280);
+        }
+    }
+    &__overlay {
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-position: center;
+        background-size: cover;
+    }
+    &__box {
+        max-width: rem(1144);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        gap: rem(20);
+        @include tablet-sm {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__group {
+        width: fit-content;
+        @include tablet-sm {
+            margin: auto;
+        }
+        h2 {
+            margin-right: rem(40);
+            @include tablet-sm {
+                margin-right: 0;
+            }
+        }
+    }
+    &__link {
+        margin-top: clamp(rem(1), vw(24), rem(24));
+        a {
+            margin-left: auto;
+        }
+    }
+    &__description {
+        li {
+            margin-left: rem(25);
+            &::marker {
+                color: #ebe6a9;
+            }
+        }
+    }
+
+    &__img {
+        @include tablet-sm {
+            margin: auto;
+            text-align: center;
+        }
+        img {
+            @include tablet-md {
+                max-width: rem(320);
+            }
+            @include tablet-sm {
+                max-width: rem(230);
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.question-block {
+    background: rgb(31, 2, 34);
+    padding: clamp(rem(24), vw(81), rem(81)) 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(24);
+        @include tablet-sm {
+            flex-direction: column;
+        }
+    }
+    &__img {
+        flex: 0 0 auto;
+        @include desktop-md {
+            border-radius: 0 rem(120) 0 0;
+            margin: auto;
+            text-align: center;
+        }
+        img {
+            @include desktop-md {
+                max-width: rem(264);
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__group {
+        max-width: rem(830);
+        width: 100%;
+        h2 {
+            margin-bottom: clamp(rem(24), vw(48), rem(48));
+            text-align: center;
+        }
+        h3 {
+            cursor: pointer;
+            background: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Fixel Display';
+            font-size: clamp(rem(16), vw(24), rem(24));
+            font-weight: 300;
+            line-height: 1.37;
+            letter-spacing: 0%;
+            text-align: left;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+
+            svg {
+                margin-top: rem(8);
+                margin-left: rem(15);
+                transition: transform 0.2s ease-out 0.15s;
+            }
+            span {
+                display: none;
+            }
+        }
+        .ui-state-active {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__item-desc {
+        background: linear-gradient(60.46deg, rgba(154, 121, 50, 0.8), rgba(227, 218, 149, 0.8), rgba(243, 242, 188, 0.8), rgba(153, 120, 50, 0.8));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-family: 'Fixel Display';
+        font-size: clamp(rem(12), vw(18), rem(18));
+        font-weight: 300;
+        line-height: 1.38;
+        text-align: left;
+        padding-top: rem(4);
+    }
+    &__item {
+        border-bottom: 0.5px solid #ebe6a996;
+        padding: rem(16) rem(12);
+        @include tablet-sm {
+            padding: rem(8);
+        }
+    }
+}
+
+.testimonials-block {
+    background: rgb(31, 2, 34);
+    padding: clamp(rem(24), vw(80), rem(80)) 0;
+    h2 {
+        width: fit-content;
+        margin: 0 auto clamp(rem(6), vw(40), rem(40));
+    }
+    .swiper-slide {
+        border: 1.5px solid #ebe6a9;
+    }
+    .swiper-slide-next {
+        border: none;
+        cursor: pointer;
+    }
+    .swiper-slide img {
+        transition: all 0.3s;
+        filter: brightness(0.4);
+    }
+    .swiper-slide-next img {
+        transition: all 0.3s;
+        filter: brightness(1);
+    }
+}
+
+.training-block {
+    background: rgb(31, 2, 34);
+    padding: clamp(rem(37), vw(57), rem(57)) 0;
+    position: relative;
+    &::after {
+        position: absolute;
+        content: '';
+        background-image: url('./../../images/smoke-3.png');
+        background-size: cover;
+        width: rem(850);
+        height: rem(915);
+        right: 50%;
+        bottom: rem(-180);
+        @include tablet-sm {
+            width: rem(280);
+            height: rem(300);
+        }
+    }
+    &__group {
+        max-width: rem(724);
+        width: 100%;
+        margin: auto;
+        h2 {
+            text-align: center;
+        }
+    }
+    &__link {
+        margin-top: clamp(rem(4), vw(40), rem(40));
+        a {
+            margin: auto;
+        }
+    }
+}
+
+.contact-block {
+    position: relative;
+    padding: clamp(rem(40), vw(120), rem(120)) 0;
+    &__overlay {
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-position: center;
+        background-size: cover;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: rem(8);
+    }
+    &__description {
+        text-align: center;
+        margin-bottom: clamp(rem(20), vw(56), rem(56));
+    }
+
+    .form-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: rem(24);
+
+        input,
+        textarea {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid transparent;
+            border-image: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+            border-image-slice: 1;
+            color: #ebe6a9;
+            padding: rem(7);
+            font-weight: 300;
+            background: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: Fixel Display;
+            font-size: clamp(rem(12), vw(18), rem(18));
+            font-weight: 300;
+            line-height: 1.3;
+            letter-spacing: 0%;
+            text-align: left;
+            &::placeholder {
+                color: #ebe6a9;
+                font-weight: 300;
+                background: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-family: Fixel Display;
+                font-size: clamp(rem(12), vw(18), rem(18));
+                font-weight: 300;
+                line-height: 1.3;
+                letter-spacing: 0%;
+                text-align: left;
+            }
+        }
+
+        @include tablet-sm {
+            grid-template-columns: 1fr;
+            gap: rem(8);
+        }
+    }
+    input[type='submit'] {
+        margin: clamp(rem(16), vw(40), rem(40)) auto 0;
+    }
+}
+

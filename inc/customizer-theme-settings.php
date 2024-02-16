@@ -7,7 +7,7 @@ function theme_scripts($wp_customize)
 		'priority'       => 10,
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
-		'title'          => __('Theme Settings', 'ed-theme'),
+		'title'          => __('Theme Settings', 'witch'),
 	));
 
 	// sections
@@ -15,7 +15,7 @@ function theme_scripts($wp_customize)
 	$wp_customize->add_section(
 		'scripts',
 		array(
-			'title'    => __('Header/Footer Scripts', 'ed-theme'),
+			'title'    => __('Header/Footer Scripts', 'witch'),
 			'panel'  => 'panel_id',
 		)
 	);
@@ -28,9 +28,9 @@ function theme_scripts($wp_customize)
 			$wp_customize,
 			'header-scripts',
 			array(
-				'label'       => __('Header Scripts', 'ed-theme'),
+				'label'       => __('Header Scripts', 'witch'),
 				'section' => 'scripts',
-				'description' => sprintf(__('This code will output immediately before the closing %s tag in the document source.', 'ed-theme'), esc_html('</head>')),
+				'description' => sprintf(__('This code will output immediately before the closing %s tag in the document source.', 'witch'), esc_html('</head>')),
 				'type'        => 'textarea',
 				'settings' => 'header-scripts-settings'
 			)
@@ -45,9 +45,9 @@ function theme_scripts($wp_customize)
 			$wp_customize,
 			'footer-scripts',
 			array(
-				'label'       => __('Footer Scripts', 'ed-theme'),
+				'label'       => __('Footer Scripts', 'witch'),
 				'section' => 'scripts',
-				'description' => sprintf(__('This code will output immediately before the closing %s tag in the document source.', 'ed-theme'), esc_html('</body>')),
+				'description' => sprintf(__('This code will output immediately before the closing %s tag in the document source.', 'witch'), esc_html('</body>')),
 				'type'        => 'textarea',
 				'settings' => 'footer-scripts-settings'
 			)
@@ -62,7 +62,7 @@ function theme_scripts($wp_customize)
 			$wp_customize,
 			'custom-logo',
 			array(
-				'label'       => __('Custom Logo Site', 'ed-theme'),
+				'label'       => __('Custom Logo Site', 'witch'),
 				'section' => 'title_tagline',
 				'type'        => 'media',
 				'settings' => 'custom_logo_site',

@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Mak';
+    src: url('../mak/MAK.woff') format('woff'), url('../mak/MAK.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+
