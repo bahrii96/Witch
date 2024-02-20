@@ -4,13 +4,13 @@ h1 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-family: 'Mak';
-    font-size: rem(175);
+    font-size: rem(172);
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: rem(5);
     @include desktop-mdl {
-        font-size: rem(156);
+        font-size: rem(152);
         letter-spacing: rem(0);
     }
     @include desktop-md {

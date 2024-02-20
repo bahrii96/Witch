@@ -57,7 +57,7 @@ body {
                     letter-spacing: 0%;
                     text-align: left;
                     text-transform: uppercase;
-										transition: all .3s;
+                    transition: all 0.3s;
                     &:hover {
                         opacity: 0.7;
                     }
@@ -65,7 +65,17 @@ body {
             }
         }
     }
+    .primary_right {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
 
+        .menu-menu-right-container,
+        .menu-menu-right-ru-container,
+        .menu-menu-right-en-container {
+            flex: 1;
+        }
+    }
     .menu-toggle {
         visibility: visible;
         opacity: 1;
@@ -297,20 +307,35 @@ body {
         }
     }
 }
-.menu-item-gtranslate {
-    ul.sub-menu {
-        display: flex;
-        flex-direction: row !important;
-        gap: rem(4);
-        li {
-            border-right: rem(1.5) solid #ebe6a9;
-            padding: 0 rem(5) 0 !important;
-            &:last-child {
-                border-right: none;
-            }
+
+.languages-menu {
+    margin-left: clamp(rem(30), vw(80), rem(80));
+    @include tablet-md {
+        margin-left: 0;
+    }
+    a {
+        border-right: rem(1.5) solid #ebe6a9;
+        padding: 0 rem(5) 0;
+        background: linear-gradient(60.46deg, rgb(154, 121, 50), rgb(227, 218, 149), rgb(243, 242, 188), rgb(153, 120, 50));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-family: 'Fixel Display';
+        font-size: rem(16);
+        font-weight: 300;
+        line-height: 1.375;
+        letter-spacing: 0%;
+        text-align: left;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+        &:last-child {
+            border-right: none;
+        }
+        &:first-child {
+            padding-left: 0;
         }
     }
-}
-a.gt-current-wrapper.notranslate.glink.nturl.gt_raw_link-xxjexk {
-    display: none;
 }

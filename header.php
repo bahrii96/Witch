@@ -9,7 +9,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php $header_settings = get_field('header_settings', 'options'); ?>
+	<?php $link = get_field('link', 'options'); ?>
 
 	<header class="header">
 		<div class="container">
@@ -42,6 +42,16 @@
 						'walker' => new Custom_Walker_Nav_Menu
 					));
 					?>
+					<div class="languages-menu">
+						<?php
+						$languages = pll_the_languages(array('raw' => 1));
+						foreach ($languages as $language) {
+							echo '<a href="' . $language['url'] . '">' . strtoupper($language['slug']) . '</a>';
+						}
+						?>
+					</div>
+
+
 				</div>
 
 			</nav>
@@ -62,13 +72,13 @@
 			</div>
 			<nav class="nav-mob">
 				<?php
-				// wp_nav_menu(array(
-				// 	'theme_location' => 'primary_left',
-				// 	'menu_class' => 'main-nav',
-				// 	'walker' => new Custom_Walker_Nav_Menu
-				// ));
+				wp_nav_menu(array(
+					'theme_location' => 'primary_left',
+					'menu_class' => 'main-nav',
+					'walker' => new Custom_Walker_Nav_Menu
+				));
 				?>
-
+				<a href=""></a>
 				<?php
 				wp_nav_menu(array(
 					'theme_location' => 'primary_right',
@@ -76,8 +86,21 @@
 					'walker' => new Custom_Walker_Nav_Menu
 				));
 				?>
-
-				<a href="#popup" data-fancybox class="btn">Зв’язатися</a>
+				<div class="languages-menu">
+					<?php
+					$languages = pll_the_languages(array('raw' => 1));
+					foreach ($languages as $language) {
+						echo '<a href="' . $language['url'] . '">' . strtoupper($language['slug']) . '</a>';
+					}
+					?>
+				</div>
+				<?php if ($link) : ?>
+					<?php
+					$link_url = $link['url'];
+					$link_title = $link['title'];
+					$link_target = $link['target'] ? $link['target'] : '_self'; ?>
+					<a class="btn" data-fancybox href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?> </a>
+				<?php endif; ?>
 			</nav>
 		</div>
 	</header>
